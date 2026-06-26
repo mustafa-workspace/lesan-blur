@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lisan Blur Docs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./assets/imgs/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- Header -->
+        <header class="navbar">
+            <div class="logo">
+                <img src="./assets/imgs/icon.png" alt="Lesan Blur Logo" class="logo-img logo-icon   ">
+                <span>Lesan Blur </span>
+            </div>
+            <div class="nav-actions">
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme">
+                    <!-- Sun/Moon icons will be updated by JS, but start with a default SVG -->
+                    <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button id="langToggle" class="lang-btn">English / عربي</button>
+                <a href="https://github.com/mustafa-workspace/lesan-blur" target="_blank" class="github-link">GitHub</a>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar">
+                <nav>
+                    <div class="nav-group">
+                        <h3 class="nav-group-title" data-i18n="nav_overview">نظرة عامة</h3>
+                        <ul class="nav-list">
+                            <li><a href="#introduction" class="nav-link active" data-section="introduction" data-i18n="nav_intro">المقدمة والأهمية</a></li>
+                            <li><a href="#usage" class="nav-link" data-section="usage" data-i18n="nav_usage">دليل الاستخدام</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-group">
+                        <h3 class="nav-group-title" data-i18n="nav_dev">للمطورين</h3>
+                        <ul class="nav-list">
+                            <li><a href="#code-manifest" class="nav-link" data-section="code-manifest" data-i18n="nav_manifest">إعدادات الإضافة (Manifest)</a></li>
+                            <li><a href="#code-content" class="nav-link" data-section="code-content" data-i18n="nav_content">منطق الحجب (Content)</a></li>
+                            <li><a href="#code-background" class="nav-link" data-section="code-background" data-i18n="nav_background">الخلفية (Background)</a></li>
+                            <li><a href="#code-popup" class="nav-link" data-section="code-popup" data-i18n="nav_popup">واجهة المستخدم (Popup)</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-group">
+                        <h3 class="nav-group-title" data-i18n="nav_updates">التحديثات</h3>
+                        <ul class="nav-list">
+                            <li><a href="#changelog" class="nav-link" data-section="changelog" data-i18n="nav_changelog">ما الجديد؟ (Changelog)</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="content-area">
+                <div class="content-wrapper">
+                    
+                    <!-- Section: Introduction -->
+                    <section id="introduction" class="content-section active">
+                        <!-- Arabic Content -->
+                        <div class="lang-ar">
+                            <h1>المقدمة والأهمية</h1>
+                            <p class="lead">مشروع <strong>Lesan Blur</strong> هو إضافة (Extension) لمتصفح جوجل كروم تهدف إلى جعل بيئة وسائل التواصل الاجتماعي أكثر أماناً ونظافة.</p>
+                            
+                            <h2>لماذا قمنا ببناء هذه الإضافة؟</h2>
+                            <p>تنتشر الكلمات المسيئة والشتائم بشكل كبير في التعليقات والمنشورات على وسائل التواصل الاجتماعي، مما قد يؤثر سلباً على تجربة المستخدمين ويخلق بيئة غير صحية خاصة للشباب والأطفال. جاءت فكرة Lesan Blur لتقوم بحجب هذه الكلمات بشكل تلقائي بمجرد ظهورها على الشاشة.</p>
+
+                            <h2>أهمية المشروع</h2>
+                            <ul>
+                                <li><strong>حماية المجتمع:</strong> تقليل التعرض للمحتوى اللفظي المسيء.</li>
+                                <li><strong>تجربة تصفح هادئة:</strong> التركيز على المحتوى المفيد دون تشتت بسبب التعليقات السلبية.</li>
+                                <li><strong>الخصوصية وعدم التتبع:</strong> الإضافة تعمل محلياً (Local) في متصفحك وتقوم بمسح النصوص لحظياً باستخدام تقنيات DOM، بدون إرسال بياناتك لأي خوادم خارجية.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- English Content -->
+                        <div class="lang-en" style="display: none;">
+                            <h1>Introduction & Importance</h1>
+                            <p class="lead">The <strong>Lesan Blur</strong> project is a Google Chrome Extension aimed at making social media environments safer and cleaner.</p>
+                            
+                            <h2>Why did we build this extension?</h2>
+                            <p>Offensive words and profanity are widespread in comments and posts on social media, which can negatively impact the user experience and create an unhealthy environment, especially for youth and children. Lesan Blur was created to automatically blur these words as soon as they appear on the screen.</p>
+
+                            <h2>Importance of the Project</h2>
+                            <ul>
+                                <li><strong>Community Protection:</strong> Reducing exposure to offensive verbal content.</li>
+                                <li><strong>Peaceful Browsing Experience:</strong> Focusing on useful content without being distracted by negative comments.</li>
+                                <li><strong>Privacy and No Tracking:</strong> The extension operates locally in your browser and scans text instantly using DOM techniques, without sending your data to any external servers.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Section: Usage -->
+                    <section id="usage" class="content-section">
+                        <!-- Arabic Content -->
+                        <div class="lang-ar">
+                            <h1>دليل الاستخدام</h1>
+                            <p>استخدام إضافة Lesan Blur بسيط جداً ومصمم ليكون يعمل في الخلفية دون إزعاج.</p>
+
+                            <h2>كيفية التثبيت (للمطورين حالياً)</h2>
+                            <ol>
+                                <li>قم بتحميل مجلد المشروع <code>Lesan blur</code>.</li>
+                                <li>افتح متصفح جوجل كروم واذهب إلى <code>chrome://extensions/</code>.</li>
+                                <li>قم بتفعيل خيار <strong>Developer mode</strong> في أعلى اليمين.</li>
+                                <li>اضغط على <strong>Load unpacked</strong> واختر مجلد المشروع.</li>
+                            </ol>
+
+                            <h2>كيفية التشغيل والإيقاف</h2>
+                            <p>بمجرد تثبيت الإضافة ستظهر أيقونتها في شريط إضافات المتصفح. عند الضغط عليها ستفتح واجهة (Popup) تحتوي على زر تشغيل (Toggle).</p>
+                            <ul>
+                                <li><strong>التشغيل (ON):</strong> سيتم مراقبة المواقع المدعومة وحجب أي كلمات مسيئة تظهر.</li>
+                                <li><strong>الإيقاف (OFF):</strong> ستتوقف الإضافة عن العمل، وستظهر جميع النصوص بشكلها الطبيعي.</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- English Content -->
+                        <div class="lang-en" style="display: none;">
+                            <h1>Usage Guide</h1>
+                            <p>Using the Lesan Blur extension is very simple and designed to work seamlessly in the background.</p>
+
+                            <h2>How to Install (For Developers Currently)</h2>
+                            <ol>
+                                <li>Download the project folder <code>Lesan blur</code>.</li>
+                                <li>Open Google Chrome and navigate to <code>chrome://extensions/</code>.</li>
+                                <li>Enable the <strong>Developer mode</strong> option in the top right corner.</li>
+                                <li>Click on <strong>Load unpacked</strong> and select the project folder.</li>
+                            </ol>
+
+                            <h2>How to Toggle ON/OFF</h2>
+                            <p>Once installed, the extension icon will appear in the browser's extensions bar. Clicking it opens a Popup interface with a toggle switch.</p>
+                            <ul>
+                                <li><strong>ON:</strong> Supported sites will be monitored, and any offensive words will be blurred out.</li>
+                                <li><strong>OFF:</strong> The extension will stop working, and all text will appear normally.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Section: Code Manifest -->
+                    <section id="code-manifest" class="content-section">
+                        <!-- Arabic -->
+                        <div class="lang-ar">
+                            <h1>إعدادات الإضافة (Manifest)</h1>
+                            <p>ملف <code>manifest.json</code> هو القلب النابض للإضافة، فهو يخبر المتصفح عن ماهية الإضافة وصلاحياتها.</p>
+                            
+                            <h3>الصلاحيات (Permissions)</h3>
+                            <p>نستخدم صلاحيات مثل <code>storage</code> لحفظ حالة الإضافة (مفعلة/معطلة)، و <code>activeTab</code> للتعامل مع التبويبة الحالية.</p>
+
+                            <h3>النطاقات المدعومة (Host Permissions)</h3>
+                            <p>تم تحديد المواقع التي يحق للإضافة العمل عليها، مثل الفيسبوك وتويتر وجوجل.</p>
+                        </div>
+                        
+                        <!-- English -->
+                        <div class="lang-en" style="display: none;">
+                            <h1>Extension Configuration (Manifest)</h1>
+                            <p>The <code>manifest.json</code> file is the beating heart of the extension. It tells the browser what the extension is and its permissions.</p>
+                            
+                            <h3>Permissions</h3>
+                            <p>We use permissions like <code>storage</code> to save the extension's state (enabled/disabled), and <code>activeTab</code> to interact with the current tab.</p>
+
+                            <h3>Host Permissions</h3>
+                            <p>We specify which websites the extension is allowed to operate on, such as Facebook, Twitter, and Google.</p>
+                        </div>
+                        
+                        <div class="code-block">
+<pre><code>"host_permissions": [
+  "*://*.facebook.com/*",
+  "*://*.youtube.com/*",
+  "*://*.instagram.com/*",
+  "*://*.twitter.com/*",
+  "*://*.x.com/*",
+  "*://*.google.com/*"
+]</code></pre>
+                        </div>
+                    </section>
+
+                    <!-- Section: Code Content Scripts -->
+                    <section id="code-content" class="content-section">
+                        <!-- Arabic -->
+                        <div class="lang-ar">
+                            <h1>منطق الحجب (Content Scripts)</h1>
+                            <h2>1. قاموس الكلمات (words.js)</h2>
+                            <p>يحتوي على مصفوفة <code>badWords</code> والتي تضم الكلمات المسيئة باللغتين العربية والإنجليزية. يتم تحويلها إلى تعبير نمطي للبحث.</p>
+
+                            <h2>2. محرك الحجب (content.js)</h2>
+                            <p>يستخدم <code>TreeWalker</code> للبحث عن النصوص ومطابقتها مع القاموس. وفي حال وجود كلمة مسيئة، يتم حجبها بـ <code>&lt;span&gt;</code>. كما يعتمد على <code>MutationObserver</code> لمراقبة أي محتوى جديد يظهر عند التمرير.</p>
+
+                            <h2>3. تصميم الحجب (content.css)</h2>
+                        </div>
+                        
+                        <!-- English -->
+                        <div class="lang-en" style="display: none;">
+                            <h1>Blur Logic (Content Scripts)</h1>
+                            <h2>1. Word Dictionary (words.js)</h2>
+                            <p>Contains the <code>badWords</code> array which includes offensive words in both Arabic and English. This is converted into a regular expression for searching.</p>
+
+                            <h2>2. Blur Engine (content.js)</h2>
+                            <p>Uses a <code>TreeWalker</code> to find text nodes and match them against the dictionary. If an offensive word is found, it is wrapped in a blurred <code>&lt;span&gt;</code>. It also relies on a <code>MutationObserver</code> to monitor dynamically loaded content during scrolling.</p>
+
+                            <h2>3. Blur Styling (content.css)</h2>
+                        </div>
+                        
+                        <div class="code-block">
+<pre><code>.lesan-blurred-text {
+  filter: blur(5px);
+  background-color: #333;
+  color: transparent;
+  pointer-events: none;
+}</code></pre>
+                        </div>
+                    </section>
+
+                    <!-- Section: Code Background -->
+                    <section id="code-background" class="content-section">
+                        <!-- Arabic -->
+                        <div class="lang-ar">
+                            <h1>العمليات في الخلفية (Background)</h1>
+                            <p>ملف <code>background.js</code> يعمل كـ Service Worker لمعالجة التحديثات وحفظ حالة التشغيل عبر <code>chrome.storage.sync</code> والإستماع للرسائل القادمة من الـ Popup.</p>
+                        </div>
+                        
+                        <!-- English -->
+                        <div class="lang-en" style="display: none;">
+                            <h1>Background Tasks</h1>
+                            <p>The <code>background.js</code> file acts as a Service Worker to process updates, save the toggle state via <code>chrome.storage.sync</code>, and listen for messages coming from the Popup UI.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section: Code Popup -->
+                    <section id="code-popup" class="content-section">
+                        <!-- Arabic -->
+                        <div class="lang-ar">
+                            <h1>واجهة المستخدم (Popup)</h1>
+                            <p>الواجهة التي تظهر للمستخدم عند الضغط على أيقونة الإضافة بتصميم داكن احترافي، وتحتوي على زر تشغيل بسيط يقوم بإرسال الأوامر لتحديث الحجب فوراً في كل الصفحات النشطة.</p>
+                        </div>
+                        
+                        <!-- English -->
+                        <div class="lang-en" style="display: none;">
+                            <h1>User Interface (Popup)</h1>
+                            <p>The interface that appears when the user clicks the extension icon. Designed with a premium dark mode, it features a simple toggle switch that sends commands to update the blurring immediately across all active tabs.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section: Changelog -->
+                    <section id="changelog" class="content-section">
+                        <!-- Arabic -->
+                        <div class="lang-ar">
+                            <h1>ما الجديد؟ (Changelog)</h1>
+
+                            <div class="changelog-item version-header">
+                                <span class="badge version">v2.0.0</span>
+                                <h3>الإصدار الثاني — تحديث الحماية الشاملة 🛡️</h3>
+                                <p>تحديث كبير يُضيف طبقات حماية متعددة ومتقدمة لتوفير بيئة تصفح آمنة بالكامل.</p>
+                            </div>
+
+                            <div class="changelog-item">
+                                <span class="badge new">جديد</span>
+                                <h3>⛔ منع التصفح الخفي (Incognito Blocker)</h3>
+                                <p>تم إضافة ميزة أمان جديدة ومهمة لمنع المستخدم من الدخول إلى وضع التصفح الخفي (Incognito Mode) بشكل كامل. عند محاولة فتح نافذة خفية، تقوم الإضافة تلقائياً بعرض صفحة تحذيرية بتصميم احترافي توضح أن هذا الوضع محظور لأسباب الحماية، ثم يتم إغلاق النافذة تلقائياً خلال 5 ثوانٍ. هذه الميزة تمنع المستخدمين (خاصة الأطفال والشباب) من تجاوز نظام الحماية عبر التصفح الخفي.</p>
+                            </div>
+
+                            <div class="changelog-item">
+                                <span class="badge new">جديد</span>
+                                <h3>🔄 إعادة التوجيه الذكي لمحركات بحث منصات التواصل</h3>
+                                <p>تم تطوير ميزة منع البحث الذكية لتشمل الآن جميع منصات التواصل الاجتماعي الكبرى (يوتيوب، فيسبوك، تويتر X، انستجرام، تيك توك، وغيرها). إذا حاول المستخدم البحث عن كلمة مسيئة في أي من هذه المنصات، ستقوم الإضافة بالتقاط البحث وإعادة توجيه المتصفح تلقائياً للبحث عن محتوى آمن وإيجابي (مثل: "محتوى مضحك وإيجابي").</p>
+                            </div>
+
+                            <div class="changelog-item">
+                                <span class="badge new">جديد</span>
+                                <h3>🌐 إضافة دعم محرك بحث Google</h3>
+                                <p>تم دمج محرك بحث <strong>Google</strong> إلى قائمة النطاقات المدعومة بشكل رسمي. الإضافة الآن أصبحت قادرة على فحص صفحات نتائج البحث (SERP) وحجب أي كلمات مسيئة تظهر في عناوين البحث أو الأوصاف قبل حتى أن تقوم بالدخول إلى الموقع، مما يوفر طبقة حماية استباقية ممتازة.</p>
+                            </div>
+
+                            <div class="changelog-item">
+                                <span class="badge feature">تحديث</span>
+                                <h3>📖 توثيق شامل وثنائي اللغة (Bilingual Docs)</h3>
+                                <p>تم إطلاق منصة توثيق متكاملة ومستقلة للإضافة. المنصة تدعم اللغتين <strong>العربية والإنجليزية</strong> بالكامل، وتأتي بتصميم عصري مريح للعين يعتمد على قاعدة الألوان (60-30-10) مع دعم للوضع الداكن والفاتح (Dark/Light Mode) لمساعدة المطورين والمستخدمين على فهم المشروع وتطويره.</p>
+                            </div>
+
+                            <hr class="changelog-divider">
+
+                            <div class="changelog-item version-header">
+                                <span class="badge version">v1.0.0</span>
+                                <h3>الإصدار الأول — الإطلاق 🚀</h3>
+                            </div>
+
+                            <div class="changelog-item">
+                                <span class="badge feature">ميزة</span>
+                                <h3>الإطلاق الأولي</h3>
+                                <ul>
+                                    <li>حجب ذكي وسريع للنصوص لحظة ظهورها على الشاشة باستخدام تقنية <code>MutationObserver</code>.</li>
+                                    <li>قاموس أساسي مدمج يدعم اللغتين العربية (بما فيها اللهجات الدارجة) والإنجليزية.</li>
+                                    <li>دعم أساسي ومباشر لأكبر منصات التواصل الاجتماعي: فيسبوك، تويتر (X)، يوتيوب، وانستجرام.</li>
+                                    <li>واجهة تحكم للمستخدم (Popup) سريعة الاستجابة لتفعيل أو إيقاف الحجب بضغطة زر.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- English -->
+                        <div class="lang-en" style="display: none;">
+                            <h1>What's New? (Changelog)</h1>
+
+                            <div class="changelog-item version-header">
+                                <span class="badge version">v2.0.0</span>
+                                <h3>Second Release — Full Protection Update 🛡️</h3>
+                                <p>A major update that adds multiple advanced protection layers to provide a completely safe browsing environment.</p>
+                            </div>
+
+                            <div class="changelog-item">
+                                <span class="badge new">New</span>
+                                <h3>⛔ Incognito Mode Blocker</h3>
+                                <p>Added a critical new security feature that completely prevents users from accessing Incognito Mode. When a user attempts to open an incognito window, the extension automatically displays a premium-designed warning page explaining that this mode is blocked for safety reasons, then closes the window automatically within 5 seconds. This feature prevents users (especially children and young people) from bypassing the protection system through private browsing.</p>
+                            </div>
+
+                            <div class="changelog-item">
+                                <span class="badge new">New</span>
+                                <h3>🔄 Smart Redirection for Social Media Search</h3>
+                                <p>The smart search prevention feature has been expanded to cover all major social media platforms (YouTube, Facebook, Twitter X, Instagram, TikTok, etc.). If a user attempts to search for a bad word on any of these platforms, the extension intercepts the search query instantly and automatically redirects the browser to search for safe and positive content (e.g., "funny and positive content").</p>
+                            </div>
+
+                            <div class="changelog-item">
+                                <span class="badge new">New</span>
+                                <h3>🌐 Added Support for Google Search</h3>
+                                <p>The <strong>Google</strong> search engine has been officially integrated into the list of supported domains. The extension is now capable of scanning Search Engine Results Pages (SERP) and proactively blurring any offensive words in search titles or snippets before you even click a link, providing an excellent layer of preemptive protection.</p>
+                            </div>
+
+                            <div class="changelog-item">
+                                <span class="badge feature">Update</span>
+                                <h3>📖 Comprehensive Bilingual Documentation</h3>
+                                <p>Launched a fully independent and comprehensive documentation platform for the extension. It fully supports both <strong>English and Arabic</strong> languages, and features a modern, eye-friendly design based on the 60-30-10 color rule with an explicit Dark/Light mode toggle to help developers and users understand and contribute to the project.</p>
+                            </div>
+
+                            <hr class="changelog-divider">
+
+                            <div class="changelog-item version-header">
+                                <span class="badge version">v1.0.0</span>
+                                <h3>Initial Release — Launch 🚀</h3>
+                            </div>
+
+                            <div class="changelog-item">
+                                <span class="badge feature">Feature</span>
+                                <h3>Initial Launch</h3>
+                                <ul>
+                                    <li>Smart and real-time text blurring the moment it appears on screen using <code>MutationObserver</code> technology.</li>
+                                    <li>Built-in core dictionary supporting both Arabic (including colloquial dialects) and English languages.</li>
+                                    <li>Out-of-the-box support for major social media platforms: Facebook, Twitter (X), YouTube, and Instagram.</li>
+                                    <li>Responsive User Interface (Popup) to toggle the blur protection ON or OFF with a single click.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
