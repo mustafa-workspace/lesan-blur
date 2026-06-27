@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Lesan Blur",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Make social media safer by blurring bad words in English and Arabic.",
   "permissions": [
     "storage",
@@ -11,17 +11,7 @@
     "tabs"
   ],
   "host_permissions": [
-    "*://*.facebook.com/*",
-    "*://*.youtube.com/*",
-    "*://*.instagram.com/*",
-    "*://*.twitter.com/*",
-    "*://*.x.com/*",
-    "*://*.google.com/*",
-    "*://*.reddit.com/*",
-    "*://*.tiktok.com/*",
-    "*://*.bing.com/*",
-    "*://*.yahoo.com/*",
-    "*://*.duckduckgo.com/*"
+    "<all_urls>"
   ],
   "background": {
     "service_worker": "background.js"
@@ -29,19 +19,11 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.facebook.com/*",
-        "*://*.youtube.com/*",
-        "*://*.instagram.com/*",
-        "*://*.twitter.com/*",
-        "*://*.x.com/*",
-        "*://*.google.com/*",
-        "*://*.reddit.com/*",
-        "*://*.tiktok.com/*",
-        "*://*.linkedin.com/*"
+        "<all_urls>"
       ],
       "css": ["content.css"],
       "js": ["words.js", "content.js"],
-      "run_at": "document_end"
+      "run_at": "document_start"
     }
   ],
   "action": {
@@ -52,5 +34,12 @@
     "16": "assets/icon16.png",
     "48": "assets/icon48.png",
     "128": "assets/icon128.png"
-  }
+  },
+  "incognito": "spanning",
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

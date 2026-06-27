@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesan Blur - التصفح الخفي محظور</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 560px;
+            padding: 3rem 2rem;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .shield-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 60px rgba(239, 68, 68, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .shield-icon svg {
+            width: 60px;
+            height: 60px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ef4444, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .message {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .message strong {
+            color: #f8fafc;
+        }
+
+        .countdown {
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .countdown span {
+            color: #ef4444;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 2.5rem;
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.4);
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        .footer-note svg {
+            vertical-align: middle;
+            margin-left: 6px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="shield-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <line x1="4.5" y1="4.5" x2="19.5" y2="19.5"></line>
+            </svg>
+        </div>
+
+        <h1>⛔ التصفح الخفي محظور</h1>
+
+        <p class="message">
+            إضافة <strong>Lesan Blur</strong> اكتشفت أنك تحاول استخدام وضع التصفح الخفي (Incognito Mode).
+            <br><br>
+            لحمايتك ولضمان بيئة تصفح آمنة، تم حظر هذا الوضع.
+            <br>
+            سيتم إغلاق هذه النافذة تلقائياً.
+        </p>
+
+        <p class="countdown">سيتم الإغلاق خلال <span id="timer">5</span> ثانية...</p>
+
+        <button class="btn" id="closeBtn">إغلاق النافذة الآن</button>
+
+        <p class="footer-note">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            Lesan Blur — حماية مجتمعك أولوية
+        </p>
+    </div>
+
+    <script>
+        let seconds = 5;
+        const timerEl = document.getElementById('timer');
+        const closeBtn = document.getElementById('closeBtn');
+
+        const interval = setInterval(() => {
+            seconds--;
+            timerEl.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(interval);
+                window.close();
+            }
+        }, 1000);
+
+        closeBtn.addEventListener('click', () => {
+            clearInterval(interval);
+            window.close();
+        });
+    </script>
+</body>
+</html>

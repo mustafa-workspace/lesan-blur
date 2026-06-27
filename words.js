@@ -1,12 +1,9 @@
-// // A predefined list of bad words in English and Arabic.
-// // Note: This is a basic starter list for demonstration.
-// قاموس موسع ومرتب (تم التأكد من عدم التكرار)
 const badWords = [
   // === English Profanity & Slurs ===
   "fuck", "fucking", "fucker", "shit", "shitty", "bitch", "bastard", "asshole", "ass",
   "dick", "pussy", "cunt", "motherfucker", "slut", "whore", "nigger", "nigga", "faggot",
-  "retard", "retarded", "damn", "crap", "douche", "wanker", "twat", "cock", "snatch", "pornhub", "pornhub.com", "pornhub.net", "pornhub.org",
-  "xhamster.com", "xhamster", "xhamster.net", "xhamster.org", "xhmaster", "xhamster18+", "xhamster2", "xhamster3", "xhamster4", "xhamster5", "xhamster6", "xhamster7", "xhamster8", "xhamster9", "xhamster10",
+  "retard", "retarded", "damn", "crap", "douche", "wanker", "twat", "cock", "snatch", "pornhub", "https://pornhub.com/", "pornhub.net", "pornhub.org", "https://pornhub.com/", "xhamster.com",
+  "xhamster", "xhamster.net", "xhamster.org", "xhmaster", "xhamster18+", "xhamster2", "xhamster3", "xhamster4", "xhamster5", "xhamster6", "xhamster7", "xhamster8", "xhamster9", "xhamster10",
   "pornhd.com", "pornhd", "pornhd.net", "pornhd.org",
   "porntube.com", "porntube", "porntube.net", "porntube.org",
   "youjiz.com", "youjiz", "youjiz.net", "youjiz.org",
@@ -31,15 +28,15 @@ const badWords = [
   "زبر", "زب", "زبوك", "ايقف", "قف",
   "عرص", "متناك", "منيوك", "خول", "لوطي", "ديوث", "مخنث", "تبل",
   "نيك", "ينيكك", "منيك", "مكنيك",
-  "احا", "اهص", "اهوس", "عوض", "كس أمك",
-  "هيجي يريحك", "هيجي ينيكك", "كسم أمك", "يلعن ابوك", "يلعن ديكتك",
+  "احا", "اهوس", "عرص", "كس أمك",
+  "هيجي يريحك", "هيجي ينيكك", "كسم أمك", "يلعن ابوك", "يلعن دينك",
   "ابن المتناكة", "ابن القحبة", "ابن العرص", "ولد القحبة",
   "كلب", "ابن كلب", "حيوان", "خنزير",
   "حقير", "ساقط", "مجرم", "مردود", "وغد", "نذل", "رذيل",
 
   // === Arabic FSI (Formal/Strong insults) ===
   "لعنة الله عليك", "تباً لك", "سحقاً لك", "افحش", "فاحشة", "فجور", "زنا",
-  "زاني", "زانية", "فاسق", "فاسقة", "مفسد", "كافر", "منافق", "خائن"
+  "زاني", "زانية", "فاسق", "فاسقة", "مفسد", "كافر", "منافق", "خائن", "مسيء", "عدواني", "مؤذٍ", "مسيء", "مسيء", "مسيء", "مسيء", "مسيء", "مسيء",
 ];
 
 

@@ -4,8 +4,8 @@
   --card-bg: #e0f2fe;         /* 30% Pastel Blue/Mint Primary for cards */
   --text-main: #0f172a;       /* Dark text for readability */
   --text-muted: #475569;
-  --accent-color: #6366f1;    /* 10% Accent CTA (Indigo) */
-  --accent-hover: #4f46e5;
+  --accent-color: #01afd2ff;    /* 10% Accent CTA (Indigo) */
+  --accent-hover: #2363db;
   --success: #10b981;
   --danger: #ef4444;
   --border-color: rgba(0, 0, 0, 0.05);
@@ -16,12 +16,12 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Dark Mode Defaults */
-    --bg-color: #121212;      /* 60% Black background */
+    --bg-color: #23282d;      /* 60% Black background */
     --card-bg: #1e1e24;       /* 30% Dark Surface */
     --text-main: #f8fafc;     /* Light text */
     --text-muted: #94a3b8;
-    --accent-color: #818cf8;  /* 10% Accent CTA */
-    --accent-hover: #6366f1;
+    --accent-color: #01afd2ff;  /* 10% Accent CTA */
+    --accent-hover: #01afd2;
     --border-color: rgba(255, 255, 255, 0.05);
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
@@ -57,8 +57,9 @@ header {
 }
 
 .logo-icon {
-  filter: drop-shadow(0 0 8px var(--accent-color));
-  color: var(--accent-color);
+  width: 48px; /* Increase size */
+  height: 48px;
+  object-fit: contain;
 }
 
 h1 {
@@ -221,6 +222,11 @@ footer p {
   font-size: 11px;
   color: var(--text-muted);
   opacity: 0.8;
+}
+
+footer p > a {
+  color: var(--accent-color);
+  margin-left: 5px;
 }
 
 @keyframes fadeInDown {

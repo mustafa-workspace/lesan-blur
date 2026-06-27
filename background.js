@@ -9,6 +9,29 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
+// ===== Incognito Mode Blocker =====
+// Detect when a new incognito window is opened and block it
+chrome.windows.onCreated.addListener((window) => {
+  if (window.incognito) {
+    // Show a warning page inside the incognito window before closing it
+    const warningUrl = chrome.runtime.getURL("blocked.html");
+    
+    // Update the active tab in the incognito window to show the warning
+    chrome.tabs.query({ windowId: window.id }, (tabs) => {
+      if (tabs.length > 0) {
+        chrome.tabs.update(tabs[0].id, { url: warningUrl }, () => {
+          // Close the incognito window after a short delay to let the user see the warning
+          setTimeout(() => {
+            chrome.windows.remove(window.id).catch(() => {
+              // Window might already be closed by the user
+            });
+          }, 6000); // 6 seconds (matches the countdown timer + 1s buffer)
+        });
+      }
+    });
+  }
+});
+
 // Handle messages from popup
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "toggle") {
