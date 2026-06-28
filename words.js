@@ -11,8 +11,8 @@ const badWords = [
   "tube8.com", "tube8", "tube8.net", "tube8.org",
   "erome.com", "erome", "erome.net", "erome.org",
   "eporner.com", "eporner", "eporner.net", "eporner.org",
-  "pornkip.com", "pornkip", "pornkip.net", "pornkip.org",
-  "pornkip.com", "pornkip", "pornkip.net", "pornkip.org",
+  "pornkip.com", "pornkip", "pornkip.net", "pornkip.org","instagram", "https://www.instagram.com/",
+  "pornkip.com", "pornkip", "pornkip.net", "pornkip.org","instagram.com",
   "pornkip.com", "pornkip", "pornkip.net", "pornkip.org", "porn", "hot", "hot girl", "hot women", "hot boys", "hot men", "hot girl",
   "hot", "hot girl", "hot women", "hot boys", "hot men", "hot girl", "girl take off", "girl", "girl in bed", "girl take off", "girl in bed", "girl take off", "girl in bed",
   // === Arabizi / Franco Arabic (Very common to bypass filters) ===

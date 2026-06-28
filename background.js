@@ -25,7 +25,7 @@ chrome.windows.onCreated.addListener((window) => {
             chrome.windows.remove(window.id).catch(() => {
               // Window might already be closed by the user
             });
-          }, 6000); // 6 seconds (matches the countdown timer + 1s buffer)
+          }, 2000); // 2 seconds (matches the countdown timer + 1s buffer)
         });
       }
     });
@@ -51,11 +51,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         
     // Note: If you don't have these icon files, chrome.action.setIcon might throw an error.
     // Uncomment when icons are ready:
-    /*
+  
     chrome.action.setIcon({
       path: path
     }).catch(err => console.log(err));
-    */
+    
   }
 });
 
