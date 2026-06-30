@@ -91,7 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_background: "Background",
             nav_popup: "User Interface (Popup)",
             nav_updates: "Updates",
-            nav_changelog: "What's New? (Changelog)"
+            nav_changelog: "What's New? (Changelog)",
+            nav_search: "Search...",
+            footer_desc: "A smart browser extension that instantly filters and blocks all sexual and bad words automatically.",
+            footer_social_title: "Connect with us",
+            footer_rights: "All rights reserved."
         },
         ar: {
             nav_overview: "نظرة عامة",
@@ -103,7 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_background: "الخلفية (Background)",
             nav_popup: "واجهة المستخدم (Popup)",
             nav_updates: "التحديثات",
-            nav_changelog: "ما الجديد؟ (Changelog)"
+            nav_changelog: "ما الجديد؟ (Changelog)",
+            nav_search: "بحث...",
+            footer_desc: "إضافة متصفح ذكية ومتطورة تحجب وتُصفّي جميع الكلمات الجنسية والبذيئة فورًا وبشكل تلقائي.",
+            footer_social_title: "تواصل معنا",
+            footer_rights: "جميع الحقوق محفوظة."
         }
     };
 
@@ -127,6 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const key = el.getAttribute('data-i18n');
             if (translations[currentLang][key]) {
                 el.textContent = translations[currentLang][key];
+            }
+        });
+
+        // Update Placeholder Texts
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (translations[currentLang][key]) {
+                el.setAttribute('placeholder', translations[currentLang][key]);
             }
         });
     });

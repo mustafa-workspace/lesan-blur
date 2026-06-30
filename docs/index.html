@@ -12,11 +12,20 @@
     <div class="layout">
         <!-- Header -->
         <header class="navbar">
-            <div class="logo">
+            <a href="../index.html" class="logo" style="text-decoration: none;">
                 <img src="../assets/imgs/icon.png" alt="Lesan Blur Logo" class="logo-img logo-icon   ">
                 <span>Lesan Blur </span>
-            </div>
+            </a>
             <div class="nav-actions">
+                <!-- Search Bar -->
+                <div class="navbar-search">
+                    <input type="text" placeholder="بحث..." data-i18n-placeholder="nav_search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+                
                 <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme">
                     <!-- Sun/Moon icons will be updated by JS, but start with a default SVG -->
                     <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -359,6 +368,39 @@
                 </div>
             </main>
         </div>
+
+        <!-- Footer -->
+        <footer class="docs-footer">
+            <div class="footer-content">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <img src="../assets/imgs/icon.png" alt="Lesan Blur Logo" class="logo-icon">
+                        <span>Lesan Blur</span>
+                    </div>
+                    <p class="footer-desc" data-i18n="footer_desc">إضافة متصفح ذكية ومتطورة تحجب وتُصفّي جميع الكلمات الجنسية والبذيئة فورًا وبشكل تلقائي.</p>
+                </div>
+                <div class="footer-col social-col">
+                    <h4 data-i18n="footer_social_title">تواصل معنا</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/lisanblur.official" target="_blank" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://t.me/lisanblur" target="_blank" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                            <span>Telegram</span>
+                        </a>
+                        <a href="https://www.youtube.com/@coobex.official" target="_blank" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lesan Blur. <span data-i18n="footer_rights">جميع الحقوق محفوظة.</span></p>
+            </div>
+        </footer>
     </div>
     <script src="../assets/js/script.js"></script>
 </body>

@@ -3,13 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lisan Blur - Safe Your Family</title>
+    <title>Lisan Blur - Features</title>
     <!-- Google Fonts: Inter (English) + Cairo (Arabic) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./assets/css/hero.css">
     <link rel="icon" type="image/png" href="./assets/imgs/icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: left;
+            transition: transform 0.3s ease, background 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        html[dir="rtl"] .feature-card {
+            text-align: right;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--color-accent);
+        }
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .feature-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 12px;
+        }
+        .feature-desc {
+            font-size: 15px;
+            color: var(--color-gray-light);
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <!-- Background Effects -->
@@ -18,7 +61,7 @@
         <div class="orb orb--indigo"></div>
         <div class="orb orb--violet"></div>
         <div class="grid-overlay"></div>
-        <div class="stars" id="stars"></div>
+        <!-- No stars as requested -->
     </div>
 
     <!-- Navigation -->
@@ -64,34 +107,36 @@
         </button>
     </nav>
 
-    <!-- Hero Section -->
-    <main class="hero">
-        <!-- Announcement Badge -->
-        <div class="announcement">
-            <span class="announcement__text" data-i18n="announcement_text">Announcing our next round of funding.</span>
-            <a href="#" class="announcement__link">
-                <span data-i18n="announcement_link">Read more</span>
-                <span class="announcement__link-arrow">&rarr;</span>
-            </a>
-        </div>
-
-        <!-- Headline -->
-        <h1 class="hero__headline">
-            <span class="hero__headline-gradient" data-i18n="headline">Our digital environment deserves to be cleaner.</span>
+    <!-- Hero Section / Features -->
+    <main class="hero" style="padding-top: 40px;">
+        <h1 class="hero__headline" style="font-size: 48px; margin-bottom: 16px;">
+            <span class="hero__headline-gradient" data-i18n="features_headline">Powerful Protection Features</span>
         </h1>
-
-        <!-- Subheadline -->
-        <p class="hero__subheadline" data-i18n="subheadline">
-            A smart and advanced browser extension that instantly and automatically blocks and filters all sexual and bad words. Browse the internet safely with your family, and protect your children's minds from verbal pollution with a single click.
+        <p class="hero__subheadline" style="margin-bottom: 40px;" data-i18n="features_subheadline">
+            Discover the advanced capabilities that make Lisan Blur the best choice for safe browsing.
         </p>
 
-        <!-- CTA Buttons -->
-        <div class="hero__actions">
-            <a href="docs/index.html" class="btn btn--primary" data-i18n="btn_primary">Get started</a>
-            <a href="https://web.facebook.com/lisanblur.official" target="_blank" class="btn btn--secondary">
-                <span data-i18n="btn_secondary">Learn more</span>
-                <span class="btn__arrow">&rarr;</span>
-            </a>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🛡️</span>
+                <h3 class="feature-title" data-i18n="feat1_title">Real-time Blurring</h3>
+                <p class="feature-desc" data-i18n="feat1_desc">Instantly blurs bad words the moment they appear on your screen, ensuring zero exposure.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🔍</span>
+                <h3 class="feature-title" data-i18n="feat2_title">Smart Redirection</h3>
+                <p class="feature-desc" data-i18n="feat2_desc">Automatically redirects unsafe searches on major social media platforms to positive content.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">⛔</span>
+                <h3 class="feature-title" data-i18n="feat3_title">Incognito Blocker</h3>
+                <p class="feature-desc" data-i18n="feat3_desc">Prevents bypassing protection by completely blocking incognito mode windows with a warning.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🌐</span>
+                <h3 class="feature-title" data-i18n="feat4_title">Multi-Platform Support</h3>
+                <p class="feature-desc" data-i18n="feat4_desc">Works seamlessly across Facebook, YouTube, Twitter (X), Google Search, and more.</p>
+            </div>
         </div>
     </main>
 
@@ -105,12 +150,16 @@
                 nav_developers: 'Developers',
                 nav_download: 'Download',
                 nav_search: 'Search...',
-                announcement_text: 'Announcing our next round of funding.',
-                announcement_link: 'Read more',
-                headline: 'Our digital environment deserves to be cleaner',
-                subheadline: ' A smart and advanced browser extension that instantly and automatically blocks and filters all sexual and bad words. Browse the internet safely with your family, and protect your children minds from verbal pollution with a single click..',
-                btn_primary: 'Get started',
-                btn_secondary: 'Learn more'
+                features_headline: 'Powerful Protection Features',
+                features_subheadline: 'Discover the advanced capabilities that make Lisan Blur the best choice for safe browsing.',
+                feat1_title: 'Real-time Blurring',
+                feat1_desc: 'Instantly blurs bad words the moment they appear on your screen, ensuring zero exposure.',
+                feat2_title: 'Smart Redirection',
+                feat2_desc: 'Automatically redirects unsafe searches on major social media platforms to positive content.',
+                feat3_title: 'Incognito Blocker',
+                feat3_desc: 'Prevents bypassing protection by completely blocking incognito mode windows with a warning.',
+                feat4_title: 'Multi-Platform Support',
+                feat4_desc: 'Works seamlessly across Facebook, YouTube, Twitter (X), Google Search, and more.'
             },
             ar: {
                 logo: ' لسان بلور',
@@ -119,12 +168,16 @@
                 nav_developers: 'المطورون',
                 nav_download: 'التحميل',
                 nav_search: 'بحث...',
-                announcement_text: 'نعلن عن جولتنا التالية من التمويل.',
-                announcement_link: 'اقرأ المزيد',
-                headline: 'بيئتنا الرقمية تستحق أن تكون أنظف',
-                subheadline: 'إضافة متصفح ذكية ومتطورة تحجب وتُصفّي جميع الكلمات الجنسية والبذيئة فورًا وبشكل تلقائي. تصفّح الإنترنت بأمان مع عائلتك، واحمِ عقول أطفالك من التلوث اللفظي بنقرة واحدة.',
-                btn_primary: 'ابدأ الآن',
-                btn_secondary: 'اعرف المزيد'
+                features_headline: 'ميزات حماية متقدمة',
+                features_subheadline: 'اكتشف القدرات المتقدمة التي تجعل لسان بلور الخيار الأفضل لتصفح آمن.',
+                feat1_title: 'حجب فوري (Real-time)',
+                feat1_desc: 'يحجب الكلمات البذيئة فور ظهورها على شاشتك، مما يضمن عدم التعرض لها أبداً.',
+                feat2_title: 'إعادة التوجيه الذكي',
+                feat2_desc: 'يُعيد توجيه عمليات البحث غير الآمنة على منصات التواصل الكبرى إلى محتوى إيجابي تلقائياً.',
+                feat3_title: 'منع التصفح الخفي',
+                feat3_desc: 'يمنع تجاوز الحماية عبر حظر نوافذ التصفح الخفي بالكامل وإظهار رسالة تحذيرية.',
+                feat4_title: 'دعم منصات متعددة',
+                feat4_desc: 'يعمل بسلاسة على فيسبوك، يوتيوب، تويتر (X)، بحث جوجل، والمزيد.'
             }
         };
 
@@ -150,7 +203,7 @@
                 html.setAttribute('lang', lang);
 
                 // Update page title
-                document.title = translations[lang].headline;
+                document.title = translations[lang].features_headline;
 
                 // Update all translatable elements
                 document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -193,34 +246,12 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close mobile menu when a link is clicked
         navLinks.querySelectorAll('.navbar__link').forEach(link => {
             link.addEventListener('click', () => {
                 navToggle.classList.remove('active');
                 navLinks.classList.remove('active');
             });
         });
-
-        // ===== Generate Star Particles =====
-        (function createStars() {
-            const container = document.getElementById('stars');
-            const count = 60;
-
-            for (let i = 0; i < count; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.width = (Math.random() * 2 + 1) + 'px';
-                star.style.height = star.style.width;
-                star.style.animationDelay = (Math.random() * 5) + 's';
-                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                star.style.opacity = Math.random() * 0.5 + 0.1;
-
-                container.appendChild(star);
-            }
-        })();
 
         // ===== Parallax Mouse Effect on Orbs =====
         (function parallaxEffect() {
@@ -249,7 +280,6 @@
 
                 requestAnimationFrame(animate);
             }
-
             animate();
         })();
 
@@ -270,47 +300,9 @@
                     navbar.style.backdropFilter = 'none';
                     navbar.style.borderBottom = '1px solid transparent';
                 }
-
                 lastScroll = currentScroll;
             });
         })();
-
-        // ===== Button Ripple Effect =====
-        document.querySelectorAll('.btn--primary').forEach(btn => {
-            btn.addEventListener('click', function (e) {
-                const rect = this.getBoundingClientRect();
-                const ripple = document.createElement('span');
-                const size = Math.max(rect.width, rect.height);
-
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    border-radius: 50%;
-                    background: rgba(255, 255, 255, 0.3);
-                    left: ${e.clientX - rect.left - size / 2}px;
-                    top: ${e.clientY - rect.top - size / 2}px;
-                    transform: scale(0);
-                    animation: ripple 0.6s ease-out forwards;
-                    pointer-events: none;
-                `;
-
-                this.appendChild(ripple);
-                setTimeout(() => ripple.remove(), 600);
-            });
-        });
-
-        // Add ripple keyframes dynamically
-        const rippleStyle = document.createElement('style');
-        rippleStyle.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(2);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(rippleStyle);
     </script>
 </body>
 </html>
