@@ -45,12 +45,13 @@ function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-// Create a combined regular expression that matches any of the bad words,
-// as whole words only (where applicable), case insensitive.
-// For Arabic, word boundaries \b might not work perfectly depending on the regex engine, 
-// so we might need spaces or punctuation boundaries.
-const boundaries = "(?:^|\\s|[.,!?;:\"'()[\\]{}<>-])";
 const badWordsRegexSource = badWords.map(word => escapeRegExp(word)).join('|');
+
+// Use lookbehind and lookahead to ensure we only match whole words.
+// We include spaces and common English/Arabic punctuation as boundaries.
+const leftBoundary = "(?<=^|\\s|[.,!?;:\"'()\\[\\]{}<>\\-_،؛؟/])";
+const rightBoundary = "(?=$|\\s|[.,!?;:\"'()\\[\\]{}<>\\-_،؛؟/])";
+
 // A global, case-insensitive regex for the bad words
-const BAD_WORDS_REGEX = new RegExp(`(${badWordsRegexSource})`, 'gi');
+const BAD_WORDS_REGEX = new RegExp(`${leftBoundary}(${badWordsRegexSource})${rightBoundary}`, 'gi');
 

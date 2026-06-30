@@ -1,4 +1,3 @@
-let isEnabled = true;
 let lastUrl = location.href;
 
 // ===== Porn Blocker =====
@@ -160,47 +159,24 @@ function blockPage() {
   });
 }
 
-// Retrieve initial state from storage
-chrome.storage.sync.get(["lesanEnabled"], (result) => {
-  if (result.lesanEnabled !== undefined) {
-    isEnabled = result.lesanEnabled;
+// Run immediately
+if (!checkPornSite()) {
+  checkPlatformSearch();
+  
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initBlurring);
+  } else {
+    initBlurring();
   }
-  if (isEnabled) {
-    if (checkPornSite()) return; // Stop if porn site
-    
-    checkPlatformSearch();
-    
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initBlurring);
-    } else {
-      initBlurring();
-    }
-  }
-});
+}
 
 function initBlurring() {
   if (document.body) scanAndBlur(document.body);
   observeMutations();
 }
 
-// Listen for messages from popup/background to toggle state
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === "toggle") {
-    isEnabled = request.enabled;
-    if (isEnabled) {
-      if (checkPornSite()) return;
-      initBlurring();
-    } else {
-      removeBlurs();
-      if (typeof observer !== "undefined") observer.disconnect();
-    }
-  }
-});
-
 // Create a MutationObserver to handle dynamically loaded content
 const observer = new MutationObserver((mutations) => {
-  if (!isEnabled) return;
-  
   if (location.href !== lastUrl) {
     lastUrl = location.href;
     checkPlatformSearch();
