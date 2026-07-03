@@ -9,3 +9,22 @@
   display: inline-block;
   padding: 0 4px;
 }
+
+
+/* x.com search bar  */
+
+/* 1. إخفاء شريط البحث الجانبي (يظهر في صفحة الـ Profile والرئيسية) */
+[data-testid="sidebarColumn"] form[role="search"] {
+    display: none !important;
+}
+
+/* 2. إخفاء شريط البحث العلوي الأساسي في صفحة الـ Explore */
+/* هذا يستهدف الخانة المخصصة للبحث في أعلى صفحة الاستكشاف */
+main[role="main"] div[data-testid="TypeaheadUserPresentational"] {
+    display: none !important;
+}
+
+/* سلكتور إضافي احتياطي لشريط بحث الـ Explore بناءً على تركيبة الـ DOM */
+main[role="main"] form[role="search"] {
+    display: none !important;
+}

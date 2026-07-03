@@ -2,9 +2,87 @@ let lastUrl = location.href;
 
 // ===== Porn Blocker =====
 const PORN_KEYWORDS = [
-  "pornhub", "xvideos", "xnxx", "xhamster", "youporn", "redtube", 
-  "tube8", "spankwire", "eporner", "erome", "xnx", "xxx", "sex", "lesbian", "gay", "trans", "porn", "hot", "hot girl", "hot women", "hot boys", "hot men", "hot girl", "girl take off", "girl in bed", "girl take off", "girl in bed", "girl take off", "girl in bed"
-];
+  "pornhub", "xvideos", "xnxx", "xhamster", "youporn", "redtube", "pornkip.com", "pornkip", "pornkip.net", "pornkip.org", "instagram", "https://www.instagram.com/",
+  "pornkip.com", "pornkip", "pornkip.net", "pornkip.org", "sex content", "https://theporndude.com/", "porndude.com", "porndudedeutsch.com", "theporndude", "https://tpd.deals", "tpd.deals", "porndudecasting.com", "porndudeshop.com", "porndude.com/about", "porndudecasting.com",
+  "tube8", "spankwire", "eporner", "erome", "xnx", "xxx", "sex", "lesbian", "gay", "trans", "porn", "hot", "hot girl", "hot women", "hot boys", "hot men", "hot girl", "girl take off", "girl in bed", "girl take off", "girl in bed", "girl take off", "girl in bed",
+  "PornHub", "XVideos", "xHamster", "XNXX", "Eporner", "HQporner",
+  "Beeg", "YourPorn", "SpankBang", "Motherless", "XMoviesForYou",
+  "PornTrex", "YouJizz", "RedTube", "YouPorn", "PornOne", "3Movs","sex adult",
+  "Tube8", "PornDig", "CumLouder", "TXXX", "PornDoe", "PornHat", "OK.xxx",
+    "Candy AI", "OurDream AI", "GirlfriendGPT", "SpicyChat AI", "JuicyChat AI",
+    "PlayBun", "CreatePorn", "Joi AI", "CamSoda AI", "CrushOn AI",
+    "PornWorks AI", "TryNectar AI", "Seduced", "LusyChat AI", "GoLove AI",
+    "CamSoda", "StripChat", "SinParty", "LiveJasmin", "Streamate",
+    "BongaCams", "JerkMate", "Cam4", "MyFreeCams", "Flirtify","bueaty woman",
+    "Flirtbate", "Amateur TV", "XloveCam", "ImLive", "SkyPrivate",
+    "Brazzers", "BangBros", "SpiceVids", "I Know That Girl", "LetsDoeIt",
+    "AdultTime", "FapHouse", "Candy AI", "HentaiedPRO", "TeamSkeet",
+    "MYLF", "PureTaboo", "Naughty America", "XVideos Red", "GirlfriendGPT",
+    "Mofos", "Evil Angel", "Vixen", "AdultPrime", "PornBox",
+    "Family Strokes", "Swappz", "CzechAV", "FreeUse",
+    "CooMeet", "Flirtify", "LuckyCrush","sexy",
+    "hot girl","adult woman","sex girl","hot woman","سكس","اهات","جنسية","صور بنات",
+    "PlayBun", "XModeAI", "GenesisPorn",
+    "CooMeet", "Flirtify", "LuckyCrush",
+    "theporndude", "theporndude.com", "theporndude.net", "theporndude.org", "theporndude.com", "theporndude.net", "theporndude.org"
+    ,"fuck", "fucking", "fucker", "shit", "shitty", "bitch", "bastard", "asshole", "ass",
+  "dick", "pussy", "cunt", "motherfucker", "slut", "whore", "nigger", "nigga", "faggot",
+  "retard", "retarded", "damn", "crap", "douche", "wanker", "twat", "cock", "snatch", "pornhub", "https://pornhub.com/", "pornhub.net", "pornhub.org", "https://pornhub.com/", "xhamster.com",
+  "xhamster", "xhamster.net", "xhamster.org", "xhmaster", "xhamster18+", "xhamster2", "xhamster3", "xhamster4", "xhamster5", "xhamster6", "xhamster7", "xhamster8", "xhamster9", "xhamster10",
+  "pornhd.com", "pornhd", "pornhd.net", "pornhd.org",
+  "porntube.com", "porntube", "porntube.net", "porntube.org",
+  "youjiz.com", "youjiz", "youjiz.net", "youjiz.org",
+  "theporndude", "theporndude.com", "theporndude.net", "theporndude.org",
+  "redtube.com", "redtube", "redtube.net", "redtube.org",
+  "tube8.com", "tube8", "tube8.net", "tube8.org",
+  "erome.com", "erome", "erome.net", "erome.org",
+  "eporner.com", "eporner", "eporner.net", "eporner.org",
+  "pornkip.com", "pornkip", "pornkip.net", "pornkip.org","instagram", "https://www.instagram.com/",
+  "pornkip.com", "pornkip", "pornkip.net", "pornkip.org","instagram.com","sex content",
+  "pornkip.com", "pornkip", "pornkip.net", "pornkip.org", "porn", "hot", "hot girl", "hot women", "hot boys", "hot men", "hot girl",
+  "hot", "hot girl", "hot women", "hot boys", "hot men", "hot girl", "girl take off", "girl", "girl in bed", "girl take off", "girl in bed", "girl take off", "girl in bed",
+  // === Arabizi / Franco Arabic (Very common to bypass filters) ===
+  "kosomak", "kosmk", "ksomak", "koso", "sharmouta", "sharmota", "sharmoot", "a7a", "ahaa",
+  "zib", "zobb", "teez", "teez", "mutnak", "mnawk", "5awl", "3ars", "ya 3ars", "qahba",
+  "kahba", "maknaka", "deyyth", "ayre", "ayr", "niqak", "neeek", "niiik", "fakk", "fak",
+  "khasra", "lebat", "motrebat", "zameli", "kalb", "wlad kalb", "ibn kalb",
+  "PornHub", "XVideos", "xHamster", "XNXX", "Eporner", "HQporner",
+  "Beeg", "YourPorn", "SpankBang", "Motherless", "XMoviesForYou",
+  "PornTrex", "YouJizz", "RedTube", "YouPorn", "PornOne", "3Movs",
+  "Tube8", "PornDig", "CumLouder", "TXXX", "PornDoe", "PornHat", "OK.xxx",
+    "Candy AI", "OurDream AI", "GirlfriendGPT", "SpicyChat AI", "JuicyChat AI",
+    "PlayBun", "CreatePorn", "Joi AI", "CamSoda AI", "CrushOn AI",
+    "PornWorks AI", "TryNectar AI", "Seduced", "LusyChat AI", "GoLove AI",
+    "CamSoda", "StripChat", "SinParty", "LiveJasmin", "Streamate","transgigixx",
+    "BongaCams", "JerkMate", "Cam4", "MyFreeCams", "Flirtify",
+    "Flirtbate", "Amateur TV", "XloveCam", "ImLive", "SkyPrivate",
+    "Brazzers", "BangBros", "SpiceVids", "I Know That Girl", "LetsDoeIt",
+    "AdultTime", "FapHouse", "Candy AI", "HentaiedPRO", "TeamSkeet",
+    "MYLF", "PureTaboo", "Naughty America", "XVideos Red", "GirlfriendGPT",
+    "Mofos", "Evil Angel", "Vixen", "AdultPrime", "PornBox",
+    "Family Strokes", "Swappz", "CzechAV", "FreeUse","xx","xxx",
+    "CooMeet", "Flirtify", "LuckyCrush","trans Gigi🔞🔞",
+    "PlayBun", "XModeAI", "GenesisPorn","xxx","trans","gay",
+    "CooMeet", "Flirtify", "LuckyCrush",
+
+  // === Arabic Slang (Egyptian, Levantine, Gulf) ===
+  // Warning: Explicit terms below
+  "شرموطة", "قحبة", "عاهرة", "مومس", "بغي",
+  "كس", "كسمك", "كس ", "كس اختك", "طيز", "طيزك", "خرم", "خرمك",
+  "زبر", "زب", "زبوك", "ايقف", "قف",
+  "عرص", "متناك", "منيوك", "خول", "لوطي", "ديوث", "مخنث", "تبل",
+  "نيك", "ينيكك", "منيك", "مكنيك","سككس",
+  "احا", "اهوس", "عرص", "كس ",
+  "هيجي يريحك", "هيجي ينيكك", "كسم أمك", "يلعن ابوك", "يلعن دينك",
+  "ابن المتناكة", "ابن القحبة", "ابن العرص", "ولد القحبة",
+  "كلب", "ابن كلب", "حيوان", "خنزير",
+  "حقير", "ساقط", "مجرم", "مردود", "وغد", "نذل", "رذيل",
+  "سكس", "سكسي", "سكسيه", "سكسية", "سكسية ","S;S", "SX", "SXN",
+  "TD]D,IHJ [KSDM","hfhpdm",
+
+  // === Arabic FSI (Formal/Strong insults) ===
+  "لعنة الله عليك", "تباً لك", "سحقاً لك", "افحش", "فاحشة", "فجور", "زنا",
+  ];
 
 function checkPornSite() {
   const hostname = window.location.hostname.toLowerCase();
@@ -69,9 +147,9 @@ function blockPage() {
           line-height: 1.6;
           width: 20rem;
         ">
-          يمكنك التواصل معنا عبر حساباتنا على وسائل التواصل الاجتماعي
+         أنضم لمجتمعنا السري والأمن .. لتجد من تتحدث معه 
           <br>
-          Our digital environment deserves to be cleaner.
+         Join our secret and secure community... to find someone to talk to
         </p>
 
         <!-- Social Media Icons Row -->
@@ -90,34 +168,6 @@ function blockPage() {
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
           </a>
-          <!-- YouTube -->
-          <a href="" style="
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            border: 2px solid #ddd;
-            display: flex; align-items: center; justify-content: center;
-            text-decoration: none; color: #333;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.borderColor='#FF0000'; this.style.color='#FF0000'" 
-             onmouseout="this.style.borderColor='#ddd'; this.style.color='#333'">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>
-          </a>
-          <!-- TikTok -->
-          <a href="#" style="
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            border: 2px solid #ddd;
-            display: flex; align-items: center; justify-content: center;
-            text-decoration: none; color: #333;
-            transition: all 0.2s ease;
-          " onmouseover="this.style.borderColor='#000'; this.style.color='#000'" 
-             onmouseout="this.style.borderColor='#ddd'; this.style.color='#333'">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-            </svg>
-          </a>
           <!-- WhatsApp -->
           <a href="https://web.telegram.org/k/#@lisanblur" style="
             width: 48px; height: 48px;
@@ -126,14 +176,34 @@ function blockPage() {
             display: flex; align-items: center; justify-content: center;
             text-decoration: none; color: #333;
             transition: all 0.2s ease;
-          " onmouseover="this.style.borderColor='#25D366'; this.style.color='#25D366'" 
+          " onmouseover="this.style.borderColor='#25cdd3ff'; this.style.color='#25b0d3ff'" 
              onmouseout="this.style.borderColor='#ddd'; this.style.color='#333'">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://w3.org">
+                <path d="M11.944 0C5.344 0 0 5.344 0 11.944c0 5.621 3.875 10.334 9.117 11.603.023-.424.047-1.077.008-1.54L9.08 17.58s1.606.945 4.316.945c5.344 0 8.653-4.14 8.653-8.86 0-4.04-2.883-6.852-7.143-6.852-5.183 0-8.253 3.867-8.253 7.91 0 1.564.6 3.235 1.35 4.14.15.18.172.34.127.525l-.503 2.06c-.08.33-.284.443-.615.29-2.17-.96-3.414-3.86-3.414-6.49 0-5.59 4.417-10.93 11.945-10.93 6.27 0 11.085 4.47 11.085 10.38 0 6.23-3.924 11.24-9.367 11.24-1.83 0-3.552-.95-4.14-2.07l-1.13 4.31c-.41 1.56-1.52 3.51-2.27 4.74A11.933 11.933 0 0011.944 24C18.57 24 24 18.57 24 11.944 24 5.344 18.57 0 11.944 0z"/>
+                <path d="M18.384 6.76a.547.547 0 0 0-.53-.08l-13.06 5.04c-.375.15-.371.36-.067.45l3.35 1.045 7.77-4.905c.365-.22.7-.1.427.14l-6.3 5.685-.246 3.48c.343 0 .495-.157.687-.342l1.65-1.6 3.43 2.534c.63.35 1.085.17 1.242-.58l2.25-10.6c.23-.92-.35-1.336-.913-1.072z"/>
+              </svg>
           </a>
         </div>
-
+        <!-- Join our group -->
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+          <span style="font-size: 1rem; color: #555;">Join our Chat group</span>
+          <a href="https://t.me/+9c00Nll9Aq80MTk8" style="
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            background: white;
+            transition: all 0.2s ease;
+          " onmouseover="this.style.borderColor='#2693dcff'; this.style.color='#2693dcff'" 
+             onmouseout="this.style.borderColor='#ccc'; this.style.color='#333'">
+            Join our Telegram chat
+          </a>
+        </div>
+        <br/>
         <!-- Email Contact Section -->
         <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center;">
           <span style="font-size: 1rem; color: #555;">Send us an Email</span>
@@ -162,7 +232,7 @@ function blockPage() {
 // Run immediately
 if (!checkPornSite()) {
   checkPlatformSearch();
-  
+  window.location.href
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initBlurring);
   } else {
@@ -309,7 +379,26 @@ function checkPlatformSearch() {
   let redirectUrl = null;
   
   // Safe query to redirect to
-  const safeQuery = encodeURIComponent("محتوى مضحك وإيجابي");
+  let RandomIdeasSearch = [
+    "Trailers",
+    "funny cat videos",
+    "funny dog videos",
+    "funny videos",
+    "Top fun",
+    "Trailers 2024",
+    "Trailers 2025",
+    "Trailers 2026",
+    "beautiful places in the world",
+    "Most beautiful places in the world",
+    "nature scenes",
+    "mountain views",
+    "ocean views",
+    "forests",
+    "waterfalls",
+    "top 10 most beautiful places in the world"
+  ];
+  
+  const safeQuery = encodeURIComponent(RandomIdeasSearch[Math.floor(Math.random() * RandomIdeasSearch.length)]);
 
   if (hostname.includes("youtube.com") && urlObj.pathname === "/results") {
     searchQuery = urlObj.searchParams.get("search_query");
@@ -317,10 +406,23 @@ function checkPlatformSearch() {
   } else if (hostname.includes("facebook.com") && urlObj.pathname.startsWith("/search")) {
     searchQuery = urlObj.searchParams.get("q");
     redirectUrl = `https://www.facebook.com/search/top?q=${safeQuery}`;
-  } else if ((hostname.includes("twitter.com") || hostname.includes("x.com")) && urlObj.pathname === "/search") {
+  } else if ((hostname.includes("twitter.com") || hostname.includes("x.com") || hostname.includes("x.com/explore")) && urlObj.pathname === "/search") {
     searchQuery = urlObj.searchParams.get("q");
     redirectUrl = `https://x.com/search?q=${safeQuery}`;
-  } else if (hostname.includes("instagram.com") && urlObj.pathname.includes("/explore/search")) {
+    //---
+    // دالة لإخفاء شريط البحث في X
+    function hideXSearchBar() {
+      const searchBar = document.querySelector('[data-testid="sidebarColumn"] form[role="search"]');
+      if (searchBar) {
+        searchBar.style.display = 'none !important';
+        
+      }
+    }
+
+    setInterval(hideXSearchBar, 1000);
+    
+  
+  }  else if (hostname.includes("instagram.com") && urlObj.pathname.includes("/explore/search")) {
     searchQuery = urlObj.searchParams.get("q");
     redirectUrl = `https://www.instagram.com/explore/search/keyword/?q=${safeQuery}`;
   } else if (hostname.includes("reddit.com") && urlObj.pathname.startsWith("/search")) {
@@ -332,6 +434,33 @@ function checkPlatformSearch() {
   } else if (hostname.includes("linkedin.com") && urlObj.pathname.startsWith("/search/results")) {
     searchQuery = urlObj.searchParams.get("keywords");
     redirectUrl = `https://www.linkedin.com/search/results/all/?keywords=${safeQuery}`;
+
+  } else if (hostname.includes("telegram.org")) {
+
+    const obs = new MutationObserver((obs) => {
+      const TelSearchInput = document.querySelector(".input-field-input");
+      if (TelSearchInput) {
+        TelSearchInput.addEventListener("focus", (e) => {
+          TelSearchInput.addEventListener("keyup", (searchVal) => {
+            const SearchValInput = searchVal.target.value;
+            if (SearchValInput != null || SearchValInput != '') {
+              const badTelegramWords = PORN_KEYWORDS.some(keyword => SearchValInput.includes(keyword));
+              if (badTelegramWords) {
+                  blockPage();
+                  return true;
+              }
+              return false;
+            }
+          })
+        })
+        obs.disconnect();
+      }
+    });
+    obs.observe(document.documentElement , {
+      childList:true,
+      subtree:true
+    })
+  
   }
 
   if (searchQuery) {

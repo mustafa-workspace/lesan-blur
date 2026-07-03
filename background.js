@@ -32,7 +32,19 @@ const searchEngines = [
   { host: "google.com", param: "q" },
   { host: "bing.com", param: "q" },
   { host: "yahoo.com", param: "p" },
-  { host: "duckduckgo.com", param: "q" }
+  { host: "duckduckgo.com", param: "q" },
+  { host: "theporndude.com", param: "q" },
+  { host: "tpd.deals", param: "q" },
+  { host: "porndudecasting.com", param: "q" },
+  { host: "porndudeshop.com", param: "q" },
+  { host: "porndudecasting.com", param: "q" },
+  { host: "porndudeshop.com", param: "q" },
+  { host: "porndudecasting.com", param: "q" },
+  { host: "porndudeshop.com", param: "q" },
+  {host: "youtube.com", param: "search_query"},
+  {host: "x.com",param: "q"},
+  {host:"pinterest.com",param:"q"}
+  
 ];
 
 chrome.webNavigation.onBeforeNavigate.addListener((details) => {
@@ -40,7 +52,6 @@ chrome.webNavigation.onBeforeNavigate.addListener((details) => {
 
   try {
     const url = new URL(details.url);
-    
     const engine = searchEngines.find(e => url.hostname.includes(e.host));
     if (!engine) return;
 
@@ -52,8 +63,22 @@ chrome.webNavigation.onBeforeNavigate.addListener((details) => {
     BAD_WORDS_REGEX.lastIndex = 0; // Reset index for global regex
 
     if (hasBadWord) {
-      // Replace bad words with "nature"
-      const safeQuery = queryParam.replace(BAD_WORDS_REGEX, "nature");
+      // Replace bad words with 
+      let DopaminRandomIdea = [
+        "Best place in the world to visit", 
+        "Top 10 places to visit in the world",
+        "Best places to visit in the world",
+        "Top 10 places to visit in the world",
+        "Best places to visit in the world",
+        "Top 10 places to visit in the world",
+        "Top 10 ",
+        "Top funny cat videos",
+        "Top funny dog videos",
+        "Top funny videos",
+        "Top fun",
+        "Most beautiful places in the world"
+      ]
+      const safeQuery = queryParam.replace(BAD_WORDS_REGEX, DopaminRandomIdea[Math.floor(Math.random() * DopaminRandomIdea.length)]);
       url.searchParams.set(engine.param, safeQuery);
       
       // Redirect to safe search
